@@ -47,7 +47,7 @@ fun drop [] n = []
 fun filter f [] = []
   | filter f (x::xs) = if f x then x :: (filter f xs) else filter f xs;
 
-fun even x = if x mod 2 = 0 then true else false;
+fun even x = x mod 2 = 0;
 fun odd x = (not o even) x;
 
 fun map f [] = []

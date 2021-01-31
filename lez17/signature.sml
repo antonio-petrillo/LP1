@@ -14,5 +14,6 @@ exception Empty of string
 val empty = []
 fun push (x, s) =  x :: s
 fun pop [] = raise Empty "stack vuoto"
-  | pop s = (hd s, tl s)
+  | pop (x::s) = (x, s)
+  (*| pop s = (hd s, tl s)*)
 end;

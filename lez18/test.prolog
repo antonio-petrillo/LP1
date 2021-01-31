@@ -1,20 +1,19 @@
-father(terach, abraham).
-father(terach, nachor).
-father(terach, haran).
-father(abraham, isaac).
-father(haran, lot).
-father(haran, milcah).
-father(haran, yiscah).
+% esempio di regole ricorsive tramite la costruzione di un grafo
 
-mother(sarah, isaac).
+arco(a,b).%                a
+arco(a,c).%               / \       f
+arco(b,d).%              b   c      |
+arco(c,d).%               \ /       g
+arco(d,e).%                d
+arco(f,g).%                |
+          %                e
 
-male(terach).
-male(abraham).
-male(nachor).
-male(haran).
-male(isaac).
-male(lot).
+% introduzione delle regole ricorsive
+connessi(X,X). % un vertice e' connesso/raggiungibile da se stesso
+connessi(X,Y) :- arco(X,Z), connessi(Z,Y).
+% due vertici sono connessi se:
+% - esiste un arco che parte dal primo vertice e va in un alto qualsiasi
+% - il vertice di arrivo (quello "qualsiasi" insomma) e' connesso al secondo vertice
+% NB: se non vi fosse la prima parte questa definizione di connessi non potrebbe funzionare
 
-female(sarah).
-female(milcah).
-female(yiscah).
+
