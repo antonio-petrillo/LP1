@@ -1,8 +1,9 @@
 % utility
 append([],L,L).
-append([H1|T1], L2, [H3|T3]) :- append(T1, L2, T3).
+append([H|T1], L2, [H|T3]) :- append(T1, L2, T3).
 member(X,L) :- append(_, [x,_], L).
-number(N) :- member(N,[1,2,3,4,5,6,7,8,9]).
+%number(N) :- member(N,[1,2,3,4,5,6,7,8,9]).
+
 
 % creazione della board
 start([[1,2,3],[4,5,6],[7,8,9]]).
