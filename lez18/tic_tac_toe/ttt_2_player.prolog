@@ -65,7 +65,7 @@ game_with_2_players :- % con questo predicato posso avviare una partita una volt
 
 main :-
     Choice is random(2),
-    nth0(Choice, [(user1, o), (user2, x)], (First, Symbol)),
+    nt(Choice, [(user1, o), (user2, x)], (First, Symbol)),
     format('\nThe ~a starts \n', [First]),
     starting_board(Board),
     turn(First, Symbol, Board),
